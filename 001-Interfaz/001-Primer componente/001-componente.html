@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+<script type="text/babel" data-type="module">
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+function Perfil() {
+  return (
+    <img
+      src="https://pbs.twimg.com/profile_images/1234182602027868160/_QH5i5tz_400x400.jpg"
+      alt="Jose Vicente Carratala"
+    />
+  );
+}
+
+let App = function Gallery() {
+  return (
+    <section>
+      <h1>Jose Vicente</h1>
+      <Perfil />
+      <Perfil />
+      <Perfil />
+    </section>
+  );
+}
+
+
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+</script>
+
+</html>
